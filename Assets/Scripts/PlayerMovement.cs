@@ -5,18 +5,21 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
-    private float jump_;
+    
+    public LineRenderer lineRenderer;
 
     [SerializeField] private Joystick _joystick;
 
     [SerializeField] private float _forwardSpeed;
     [SerializeField] private float _leftrightSpeed;
     [SerializeField] private Vector2 _minMaxX;
-    [SerializeField] private Vector2 _minMaxY;
     
+    
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        lineRenderer.positionCount = 0;
     }
 
     
@@ -29,13 +32,12 @@ public class PlayerMovement : MonoBehaviour
     private void _movement()
     {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, _minMaxX.x, _minMaxX.y), transform.position.y, transform.position.z);
-        rb.velocity=new Vector3(_joystick.Horizontal*_leftrightSpeed* Time.deltaTime, jump_,_forwardSpeed*Time.deltaTime);
+        rb.velocity=new Vector3(_joystick.Horizontal*_leftrightSpeed* Time.deltaTime, rb.velocity.y,_forwardSpeed*Time.deltaTime);
+        Vector3 currentPosition = transform.position;
+        lineRenderer.positionCount++;
+        lineRenderer.SetPosition(lineRenderer.positionCount - 1, currentPosition);
     }
-
-    public void jump()
-    {
-        jump_=5;
-    }
+    
 
     private void _gravity()
     {
