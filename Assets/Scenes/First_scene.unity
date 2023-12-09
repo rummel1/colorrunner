@@ -1981,7 +1981,7 @@ Transform:
   m_GameObject: {fileID: 1539642091097378807}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.408, z: 0}
+  m_LocalPosition: {x: 0, y: 1.408, z: -0.287}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1999,7 +1999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed94eada1ce5784419cd639ad1b454d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maincharacter: {fileID: 2312470447541419876}
+  _maincharacter: {fileID: 7098955013861334473}
   prefab: {fileID: 4776871692782978537}
 --- !u!33 &3641294127722465890
 MeshFilter:
@@ -2241,10 +2241,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.68
-  m_Height: 4.71
+  m_Radius: 0.79
+  m_Height: 2.13
   m_Direction: 1
-  m_Center: {x: 0, y: 0.05, z: 0}
+  m_Center: {x: 0, y: 4.24, z: 0}
 --- !u!120 &7673106799199958752
 LineRenderer:
   serializedVersion: 2
