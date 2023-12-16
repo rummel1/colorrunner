@@ -8,12 +8,15 @@ public class SpawnManager : MonoBehaviour
     private bool hasPassedDoor = false; 
     private int x;
     private int y;
+    
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("ColorObject")) 
         {
             hasPassedDoor = true;
+            UIManager.collectObject += 10;
+            
         }
     }
 
@@ -33,11 +36,12 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnCharacter()
     {
-        for (var i = 1; i < 2; i++)
+        for (var i = 1; i < 11; i++)
         {
             var position = _maincharacter.position;
             float newZ = position.z +(i*-2.0f);
             Instantiate(prefab, new Vector3(position.x, position.y, newZ), Quaternion.identity);
+            
         }
     } 
 

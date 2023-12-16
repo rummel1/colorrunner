@@ -8,7 +8,8 @@ public class ChangeColor : MonoBehaviour
     
     private bool colorChanged = false;
 
-    public GameObject clone;
+    [SerializeField] GameObject clone;
+    [SerializeField] GameObject clone1;
     private void Start()
     {
         originalCharacterColor = GetComponent<Renderer>().material.color;
@@ -40,6 +41,7 @@ public class ChangeColor : MonoBehaviour
     private void ChangeCloneColor(Color newColor)
     {
         clone.GetComponent<Renderer>().material.color = newColor;
+        clone1.GetComponent<Renderer>().material.color = newColor;
 
     }
     
