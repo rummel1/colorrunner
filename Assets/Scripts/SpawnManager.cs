@@ -58,7 +58,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnCharacter()
     {
-        for (var i = 1; i < 6; i++)
+        for (var i = 1; i < 11; i++)
         {
             var position = _maincharacter.position;
             float newZ = position.z +(i*-2.0f);

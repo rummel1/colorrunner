@@ -18,8 +18,8 @@ public class EndPoint : MonoBehaviour
         {
             Destroy(other.gameObject);
             _player.GetComponent<BoxCollider>().enabled = false;
-            playerNextMovement._minMaxXEnd.y = 33.26f;
-            playerNextMovement._minMaxXEnd.x = -33.26f;
+            playerNextMovement._minMaxXEnd.y = 76;
+            playerNextMovement._minMaxXEnd.x = -76.7f;
             _endPlayer.GetComponent<SkinnedMeshRenderer>().enabled = true;
             _endPlayer.GetComponent<PlayerLateMovement>().enabled = false;
             _endPlayer.GetComponent<PlayerNextMovement>().enabled = true;
