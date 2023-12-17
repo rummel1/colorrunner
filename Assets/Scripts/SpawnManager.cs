@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
@@ -8,7 +9,11 @@ public class SpawnManager : MonoBehaviour
     private bool hasPassedDoor = false; 
     private int x;
     private int y;
-    
+
+
+    private void Start()
+    {
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -18,6 +23,23 @@ public class SpawnManager : MonoBehaviour
             UIManager.collectObject += 10;
             
         }
+
+
+        if (other.CompareTag("Collect"))
+        {
+            for (var i = 1; i < 2; i++)
+            {
+                Destroy(other.gameObject);
+                var position = _maincharacter.position;
+                float newZ = position.z +(i*-2.0f);
+                Instantiate(prefab, new Vector3(position.x, position.y, newZ), Quaternion.identity);
+                UIManager.collectObject += 1;
+                
+            
+            }
+        }
+        
+        
     }
 
     void Update()
@@ -36,7 +58,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnCharacter()
     {
-        for (var i = 1; i < 11; i++)
+        for (var i = 1; i < 6; i++)
         {
             var position = _maincharacter.position;
             float newZ = position.z +(i*-2.0f);

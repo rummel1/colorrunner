@@ -7,6 +7,7 @@ TagManager:
   - ColorObject
   - Bullet
   - Clone
+  - Collect
   layers:
   - Default
   - TransparentFX

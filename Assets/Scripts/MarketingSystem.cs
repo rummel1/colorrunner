@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MarketingSystem : MonoBehaviour
 {
-    private int expectedValue = 10;
+    private int expectedValue = 20;
     private int totalValue = 0;
     private bool _buying = false;
     private bool _isModelUpdated = false;

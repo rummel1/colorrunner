@@ -6,8 +6,11 @@ using UnityEngine;
 public class EndPoint : MonoBehaviour
 {
     public PlayerNextMovement playerNextMovement;
-    [SerializeField] private GameObject _endPlayer;
-    [SerializeField] private GameObject _player;
+    public GameObject _endPlayer;
+    public GameObject _player;
+    public GameObject _ch9;
+    
+    public GameObject _nextLevelPanel;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -20,6 +23,10 @@ public class EndPoint : MonoBehaviour
             _endPlayer.GetComponent<SkinnedMeshRenderer>().enabled = true;
             _endPlayer.GetComponent<PlayerLateMovement>().enabled = false;
             _endPlayer.GetComponent<PlayerNextMovement>().enabled = true;
+            _nextLevelPanel.SetActive(true);
+            _ch9.gameObject.SetActive(false);
+            
+            
 
 
         }
