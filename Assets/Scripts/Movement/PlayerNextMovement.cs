@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayeNextMovement : MonoBehaviour
+public class PlayerNextMovement : MonoBehaviour
 {
     private Rigidbody rb;
     
@@ -11,7 +11,7 @@ public class PlayeNextMovement : MonoBehaviour
 
     [SerializeField] private float _forwardSpeed;
     [SerializeField] private float _leftrightSpeed;
-    [SerializeField] private Vector2 _minMaxX;
+    public Vector2 _minMaxXEnd;
     
     
 
@@ -30,7 +30,7 @@ public class PlayeNextMovement : MonoBehaviour
 
     private void _movement()
     {
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, _minMaxX.x, _minMaxX.y), transform.position.y, transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, _minMaxXEnd.x, _minMaxXEnd.y), transform.position.y, transform.position.z);
         rb.velocity=new Vector3(_joystick.Horizontal*_leftrightSpeed* Time.deltaTime, rb.velocity.y,_joystick.Vertical*_forwardSpeed*Time.deltaTime);
 
     }
